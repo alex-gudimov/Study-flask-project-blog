@@ -23,3 +23,4 @@ class Post(db.Model):
             
     def __repr__(self):
         return '<Post id: {}, title: {}>'.format(self.id, self.title)
+        
