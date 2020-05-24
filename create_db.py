@@ -1,9 +1,15 @@
 from app import db
 from models import Post
+from models import Tag
 
-posts = Post.query.all()
+#tag = Tag(name='python')
 
-p2 = Post.query.filter(Post.title.contains('second')).all()
+#db.session.add(tag)
+#db.session.commit()
 
-
-print(p2)
+t = Tag.query.first()
+post1 = Post.query.filter(Post.id==1)
+post1 = post1.first()
+post1.tags.append(t)
+db.session.add(post1)
+db.session.commit()
