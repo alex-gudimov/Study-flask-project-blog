@@ -1,8 +1,16 @@
 from app import db
 from models import Post
+from models import Tag
 
-posts = Post.query.all()
+#tag = Tag(name='python')
 
-p2 = Post.query.filter(Post.title.contains('second')).all()
+#db.session.add(tag)
+#db.session.commit()
 
-print(p2)
+post = Post.query.all()
+print(post)
+
+print('-' * 40)
+
+ps = Post.query.filter(Post.title.contains('post'))
+print(ps)
