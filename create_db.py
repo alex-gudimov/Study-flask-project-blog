@@ -7,10 +7,9 @@ from models import Tag
 #db.session.add(tag)
 #db.session.commit()
 
-post = Post.query.all()
-print(post)
-
-print('-' * 40)
-
-ps = Post.query.filter(Post.title.contains('post'))
-print(ps)
+t = Tag.query.first()
+post1 = Post.query.filter(Post.id==1)
+post1 = post1.first()
+post1.tags.append(t)
+db.session.add(post1)
+db.session.commit()
